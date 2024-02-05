@@ -1,10 +1,7 @@
 # 自判断随机二次元API  
 自判断随机二次元API 根据用户UA请求头出图  
-电脑用户打开出横图二次元壁纸 手机用户打开出现竖图壁纸 图片存储在阿里、微博图床 适合用于博客背景图和个人网站背景图调用  
-演示地址https://api.ghser.com/random  
-站长交流群53733035  
-点击链接加入群聊【站长交流裙】：https://jq.qq.com/?_wv=1027&k=eUMzlDPy  
-我只是添加了index首页以及3k7+图片外链  
-分别是2435张横图、1336张竖图  
+电脑用户打开出横图二次元壁纸 手机用户打开出现竖图壁纸 图片自动爬取第三方api 适合用于博客背景图和个人网站背景图调用  
+演示地址https://acgapi.bobocloud.eu.org
+改了index首页和添加两个爬取脚本，分别是pe-up.php,pc-up.php，并且附带已经爬取的外链
+建议配合uptime或者官方cron使用
 原作者：https://github.com/2374579255/acgAPI
-![Image](https://cdn.ghser.com/2020/07/14/3654e8df7acb7.png)
