@@ -18,13 +18,31 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 $output = curl_exec($ch);
 $a = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 curl_close($ch);
+//定义异常值1
+$yichang1 = 'https://acg.suyanw.cn/api.php';
+// 检查a是否为异常值yichang1
+if ($a == $yichang1) {
+    echo '异常值1';
+    return;
+}
+//定义异常值2
+$yichang2 = 'https://i3.wp.com/wx4.sinaimg.cn/large/.jpg';
+// 检查a是否为异常值yichang2
+if ($a == $yichang2) {
+    echo '异常值2';
+    return;
+}
 // 检查pc.txt是否包含a
 if (file_exists('pc.txt')) {
     $pc = file_get_contents('pc.txt');
     if (strpos($pc, $a) !== false) {
+        //包括
+        echo '已经包含';
+        return;
     } else {
         // 将a写入pc.txt，并且写入回车
         file_put_contents('pc.txt', $a . PHP_EOL, FILE_APPEND);
         echo '写入成功';
+        return;
     }
 }
