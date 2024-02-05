@@ -50,7 +50,7 @@ $b = date('Y-m-d', $b);
 	</div>
 	<div class="bottom">
 
-		<p>随机二次元API开源github<a href="https://acgapi.bobocloud.eu.org/" target="_blank" class="one-pan-link-mark"></a></p>
+		<p>随机二次元API开源----github<a href="https://github.com/loyejaotdiqr47123/Random-ACG-API" target="_blank" class="one-pan-link-mark"></a></p>
 	</div>
 </body>
 
