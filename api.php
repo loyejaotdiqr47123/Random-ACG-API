@@ -3,9 +3,9 @@
 function isMobile()
 {
     //获取用户代理
-    $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : ”;
+    $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
     //获取用户代理注释
-    $useragent_commentsblock = preg_match('|\(.*?\)|', $useragent, $matches) > 0 ? $matches[0] : ”;
+    $useragent_commentsblock = preg_match('|\(.*?\)|', $useragent, $matches) > 0 ? $matches[0] : '';
     //检查子字符串是否存在
     function CheckSubstrs($substrs, $text)
     {
