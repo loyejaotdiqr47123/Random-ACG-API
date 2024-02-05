@@ -47,4 +47,3 @@ function str_re($str){
   $str = str_replace("\r", "", $str);
   return $str;
 }
-?> 
