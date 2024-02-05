@@ -1,8 +1,8 @@
 <?php
 // 检查pc.txt是否存在，不存在则建新
 //if (!file_exists('pc.txt')) {
-    //$file = fopen('pc.txt', 'w');
-    //fclose($file);
+//$file = fopen('pc.txt', 'w');
+//fclose($file);
 //}
 //定义访问ua为手机
 $ua = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.0; )';
