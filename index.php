@@ -36,6 +36,7 @@ $b = date('Y-m-d', $b);
 				<?php echo $b; ?>
 			</p>
 			<p>图片均为https，高速访问</p>
+			<p>自动爬取第三方api图片</p>
 			<p>自判断二次元API基本调用格式：</p>
 			<pre><a href="<?php $_SERVER['HTTP_HOST'] ?>/api.php" target="_blank"><?php echo 'http://' . $_SERVER['HTTP_HOST'] ?>/api.php</a></pre>
 			<p>PC随机二次元API</p>
