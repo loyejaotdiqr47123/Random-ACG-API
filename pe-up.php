@@ -38,6 +38,8 @@ if ($a == $a2) {
 if (file_exists('pe.txt')) {
     $pe = file_get_contents('pe.txt');
     if (strpos($pe, $a) !== false) {
+        echo '已存在';
+        exit;
     } else {
         // 将回车写入pe.txt，然后再写入a
         file_put_contents('pe.txt', PHP_EOL . $a, FILE_APPEND);
