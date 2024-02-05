@@ -40,4 +40,3 @@ if (isMobile()) {
     //如果用户通过电脑端访问，则重定向到电脑端文件
     header("Location:" . $pc);
 }
-?>
