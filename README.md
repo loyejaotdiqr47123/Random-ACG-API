@@ -7,4 +7,4 @@
 
 建议配合uptime或者官方cron使用
 
-原作者：https://github.com/2374579255/acgAPI
+原作者：https://github.com/ghser/Random-ACG-API
