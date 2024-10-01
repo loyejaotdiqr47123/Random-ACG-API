@@ -1,35 +1,27 @@
 <?php
-function isMobile() {
-    $useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-    $useragent_commentsblock = preg_match('|\(.*?\)|', $useragent, $matches) > 0 ? $matches[0] : '';
+require_once 'vendor/autoload.php';  // 引入 Mobile_Detect 库
 
-    function CheckSubstrs($substrs, $text) {
-        foreach ($substrs as $substr) {
-            if (false !== strpos($text, $substr)) {
-                return true;
-            }
-        }
-        return false;
-    }
+use Detection\MobileDetect;
 
-    $mobile_os_list = ['Google Wireless Transcoder', 'Windows CE', 'WindowsCE', 'Symbian', 'Android', 'armv6l', 'armv5', 'Mobile', 'CentOS', 'mowser', 'AvantGo', 'Opera Mobi', 'J2ME/MIDP', 'Smartphone', 'Go.Web', 'Palm', 'iPAQ'];
-    $mobile_token_list = ['Profile/MIDP', 'Configuration/CLDC-', '160×160', '176×220', '240×240', '240×320', '320×240', 'UP.Browser', 'UP.Link', 'SymbianOS', 'PalmOS', 'PocketPC', 'SonyEricsson', 'Nokia', 'BlackBerry', 'Vodafone', 'BenQ', 'Novarra-Vision', 'Iris', 'NetFront', 'HTC_', 'Xda_', 'SAMSUNG-SGH', 'Wapaka', 'DoCoMo', 'iPhone', 'iPod'];
+// 设置内容类型为 HTML，编码为 UTF-8
+header('Content-Type: text/html; charset=utf-8');
 
-    $found_mobile = CheckSubstrs($mobile_os_list, $useragent_commentsblock) ||
-        CheckSubstrs($mobile_token_list, $useragent);
+// 创建 MobileDetect 实例
+$detect = new MobileDetect();
 
-    if ($found_mobile) {
-        return true;
-    } else {
-        return false;
-    }
+function isMobile(MobileDetect $detect) {
+    // 如果是平板或移动设备，都视为移动设备
+    return $detect->isMobile() || $detect->isTablet();
 }
 
 $pc = 'pc.php';
 $pe = 'pe.php';
 
-if (isMobile()) {
-    header("Location:" . $pe);
-} else {
-    header("Location:" . $pc);
-}
+// 根据设备类型设置重定向路径
+$redirectUrl = isMobile($detect) ? $pe : $pc;
+
+// 设置 HTTP 状态码 302 并重定向
+http_response_code(302);
+header("Location: $redirectUrl");
+
+exit;  // 确保脚本停止执行
